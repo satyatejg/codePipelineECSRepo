@@ -1,7 +1,9 @@
 version: 0.0
-os: linux
-resources:
-  - aws:ecs:service:
-      name: arn:aws:ecs:ap-south-1:590184016778:service/ECSClusterNov302024/ECSServiceForCodepipelineNov302024
-      cluster: arn:aws:ecs:ap-south-1:590184016778:cluster/ECSClusterNov302024
-      taskDefinition: arn:aws:ecs:ap-south-1:590184016778:task-definition/ECSTaskDefinitionForSampleAppNov282024:3
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-south-1:590184016778:task-definition/ECSTaskDefinitionForSampleAppNov282024:3"
+        LoadBalancerInfo:
+          ContainerName: "codepipelinecsapp"
+          ContainerPort: 80
