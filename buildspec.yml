@@ -34,11 +34,6 @@ phases:
       # Create image definitions for ECS deployment
       - printf '[{"name":"ECSContDec32024","imageUri":"%s"}]' $DOCKERHUB_USERNAME/codepipelinecsapp:$TAG > imagedefinitions.json
 
-      # Fetch the latest task definition
-      - TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition ECSTaskDefinitionDec32024 --query 'taskDefinition' --output json)
-
-      # Update the image in the task definition
-      - echo $TASK_DEFINITION | jq --arg IMAGE "$DOCKERHUB_USERNAME/codepipelinecsapp:$TAG" '.containerDefinitions[0].image = $IMAGE' > task-definition.json
 
 # Artifacts to pass to next stage
 artifacts:
@@ -46,4 +41,3 @@ artifacts:
     - appspec.yml
     # ECS task definition for deployment
     - imagedefinitions.json
-    - task-definition.json
