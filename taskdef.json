@@ -2,7 +2,7 @@
     "executionRoleArn": "arn:aws:iam::590184016778:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
-            "name": "ECSContDec52024",
+            "name": "IMAGE1_NAME",
             "image": "<IMAGE1_NAME>",
             "essential": true,
             "portMappings": [
