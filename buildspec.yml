@@ -32,7 +32,7 @@ phases:
       - docker push $DOCKERHUB_USERNAME/codepipelinecsapp:$TAG
       
       # Create image definitions for ECS deployment
-      - printf '[{"name":"ECSContDec52024","imageUri":"%s"}]' $DOCKERHUB_USERNAME/codepipelinecsapp:$TAG > imagedefinitions.json
+      - printf '[{"name":"IMAGE1_NAME","imageUri":"%s"}]' $DOCKERHUB_USERNAME/codepipelinecsapp:$TAG > imagedefinitions.json
 
 
 # Artifacts to pass to next stage
