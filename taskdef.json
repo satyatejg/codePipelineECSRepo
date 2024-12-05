@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::590184016778:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "ECSContDec52024",
+            "image": "<IMAGE1_NAME>",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "family": "ECSTaskDefinitionDec52024"
+}
