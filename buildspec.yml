@@ -41,3 +41,4 @@ artifacts:
     - appspec.yml
     # ECS task definition for deployment
     - imagedefinitions.json
+    - taskdef.json
